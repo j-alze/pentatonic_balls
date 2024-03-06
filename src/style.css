@@ -1,0 +1,138 @@
+/************************************
+P E N T A T O N I C   B A L L S
+*************************************
+Author:		Janosch Alze
+Release:	Feb. 2024
+File:		style.css
+Descr.:		stylesheet of website
+Version:	1.0
+************************************/
+
+html {
+	background-color: black;
+	color: white;
+	display: block;
+	font-family: sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#page_out {
+	width: 80vmin;
+	height: 60vmin;
+	border: 1px solid white;
+}
+
+#page_in {
+	--margin: 12px;
+	margin: var(--margin);
+	width: calc(100% - var(--margin)*2);
+	height: calc(100% - var(--margin)*2);
+	overflow: scroll;
+	scrollbar-width: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header img {
+	width: 40vmin;
+	margin: 0 0 12px 0;
+}
+
+form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+fieldset {
+	border: 1px solid white;
+	margin: 12px 0 0 0;
+	padding: 6px 12px 12px 12px;
+	width: calc(100% - 26px);
+	display: flex;
+	flex-direction: column;
+}
+
+.input_container {
+	margin: 0px 0 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	height: 1.5em;
+}
+
+.input_container label {
+	width: 40%;
+}
+
+.input_container input, .input_container select, #submit {
+	width: 20%;
+	background-color: black;
+	border: 1px solid white;
+	border-radius: 0;
+	color: white;
+}
+
+#gType, #useDev {
+	width: calc(20% + 5.6px);
+}
+
+.vis {
+	display: inherit;
+}
+
+.invis {
+	display: none;
+}
+
+#fieldGMouse, #fieldGStat {
+	width: 100%;
+	align-items: center;
+}
+
+#submit {
+	margin: 12px 0 0 0;
+	padding: 0;
+	width: 30%;
+	height: 2em;
+	font-size: 1.5em;
+}
+
+#submit:hover, .button:hover {
+	background-color: white;
+	color: black;
+}
+
+canvas {
+	background-color: black;
+	border: 1px solid white;
+}
+
+#buttons_flex {
+	margin: 12px 0 0 0;
+	display: flex;
+}
+
+#buttons_flex .button {
+	margin: 0 6px;
+	background-color: black;
+	border: 1px solid white;
+	border-radius: 0;
+	color: white;
+}
+
+#buttons_flex .button:hover {
+	background-color: white;
+	color: black;
+}

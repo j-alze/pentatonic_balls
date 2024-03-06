@@ -1,0 +1,48 @@
+<!--*********************************
+   P E N T A T O N I C   B A L L S
+*************************************
+Author:		Janosch Alze
+Release:	Feb. 2024
+File:		index.html
+Descr.:		main page of game
+Version:	1.0
+**********************************-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>pentatonic balls</title>
+		<meta name="description" content="pentatonic balls is a game, where you drop 5 balls on a plane. While they bounce around, they create a pentatonic melody based on their position and their collisions.">
+		<meta name="author" content="Janosch Alze">
+		<link rel="shortcut icon" href="icon.png" type="image/png" />
+		<link href="style.css" rel="stylesheet" type="text/css" charset="utf-8" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script src="Tone.js"></script>
+		<script src="vectors.js"></script>
+		<script src="correctingInterval.js"></script>
+		<script src="main.js"></script>
+	</head>
+	<body onload="initializePentatonicBalls()">
+		<canvas id="canvas"></canvas>
+		</br>
+		<div id="buttons" class="invis">
+			<div id="buttons_flex">
+				<button class="button" onclick="pushRestart();">RESTART</button>
+				<button class="button" onclick="pushSettings();">SETTINGS</button>
+				<button id="d_button" class="invis" onclick="pushDownload();">DOWNLOAD</button>
+			</div>
+		</div>
+		<div id="dev_buttons" class="invis">
+			<div id="buttons_flex">
+				<button class="button" onclick="pushStart();">START</button>
+				<button class="button" onclick="pushStop();">STOP</button>
+				<button class="button" onclick="pushContinue();">CONTINUE</button>
+				<button class="button" onclick="pushNext();">NEXT</button>
+				<button class="button" onclick="pushTest();">TEST</button>
+			</div>
+		</div>
+
+	</body>	
+</html>

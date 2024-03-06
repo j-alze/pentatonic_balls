@@ -1,0 +1,114 @@
+<!--*********************************
+P E N T A T O N I C   B A L L S
+*************************************
+Author:		Janosch Alze
+Release:	Feb. 2024
+File:		settings.html
+Descr.:		game settings page
+Version:	1.0
+**********************************-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>pentatonic balls</title>
+		<meta name="description" content="pentatonic balls is a game, where you drop 5 balls on a plane. While they bounce around, they create a pentatonic melody based on their position and their collisions.">
+		<meta name="author" content="Janosch Alze">
+		<link rel="shortcut icon" href="icon.png" type="image/png" />
+		<link href="style.css" rel="stylesheet" type="text/css" charset="utf-8" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script src="settings.js"></script>
+	</head>
+	<body onload="presetChange(document.getElementById('preset'))">
+		<header><img src="header.png" alt="pentatonic balls"></header>
+		<div id="page_out">
+			<div id="page_in">
+				<article>
+					Before you start, you can choose between different presets. They are all carefully balanced to give you the best experience, except for "Dev Mode", which is thought to use when developing new presets. When you load the game, you'll need to place the five balls without placing them too close to each other and the walls. If you choose one of the last two gravity types, you'll be able to control the strength and direction of the gravity with your mouse pointer.<br>
+					Enjoy the music!
+				</article>
+				<form action="main.html">
+					<fieldset>
+						<legend>Settings</legend>
+						<div class="input_container"><label for="preset">Choose a Preset:</label></td>
+						<select id="preset" onchange="presetChange(this)" name="preset">
+							<option value="1" selected>Standard</option>
+							<option value="2">Big Balls make Quick Music</option>
+							<option value="3">Be creative!</option>
+							<option value="4">Dev Mode</option>
+							<option value="0">custom</option>
+						</select></div>
+
+						<div class="input_container"><label for="useAdvanced">Advanced Settings</label>
+						<input type="button" id="useAdvanced" class="button" onclick="pushAdvanced(this)" value="Off"></div>
+					</fieldset>
+
+					<fieldset id="advSettings" class="invis">
+						<legend>Advanced Settings</legend>
+						<div class="input_container"><label for="r">Ball Radius:</label>
+						<input type="number" id="r" name="r" onchange="document.getElementById('preset').value = 0" min="20" max="100" step="1" value="40"></div>
+
+						<div class="input_container"><label for="gType">Gravity Type:</label></td>
+						<select id="gType" onchange="gravityChange(this)" name="gType">
+							<option value="0">No Gravity</option>
+							<option value="1" selected>Stationary Gravity</option>
+							<option value="2">Midpoint to Mouse</option>
+							<option value="3">Ball to Mouse (Magnet)</option>
+						</select></div>
+
+						<div class="input_container"><div id="fieldGStat" class="vis">
+							<label for="gStat">Gravity Strength:</label>
+							<input type="number" id="gStat" name="gStat" onchange="document.getElementById('preset').value = 0" min="1" max="10" step="1" value="5">
+						</div>
+						
+						<div id="fieldGMouse" class="invis">
+							<label for="gMouse">Gravity Strength:</label>
+							<input type="number" id="gMouse" name="gMouse" onchange="document.getElementById('preset').value = 0" min="1" max="10" step="1" value="3">
+						</div></div>
+							
+						<div class="input_container"><label for="solidTopBottom">Solid Wall (Top/Bottom):</label>
+						<input type="checkbox" id="solidTopBottom" onclick="pushOnOff(this)" name="solidTopBottom" value="true" checked></div>
+
+						<div class="input_container"><label for="solidLeftRight">Solid Wall (Left/Right):</label>
+						<input type="checkbox" id="solidLeftRight" onclick="pushOnOff(this)" name="solidLeftRight" value="true" checked></div>
+
+						<div class="input_container"><label for="artMode">Art Mode:</label>
+						<input type="checkbox" id="artMode" onclick="pushOnOff(this)" name="artMode" value="false"></div>
+						
+						<div class="input_container"><label for="useDev">Developer Settings</label>
+						<input type="button" id="useDev" class="button" onclick="pushDev(this)" value="Off"></div>
+					</fieldset>
+					<fieldset id="devSettings" class="invis">
+						<legend>Developer Settings</legend>
+						<div class="input_container"><label for="arrowsS">Show Speed Arrows:</label>
+						<input type="checkbox" id="arrowsS" onclick="pushOnOff(this)" name="arrowsS" value="false"></div>
+
+						<div class="input_container"><label for="arrowsG">Show Gravity Arrows:</label>
+						<input type="checkbox" id="arrowsG" onclick="pushOnOff(this)" name="arrowsG" value="false"></div>
+
+						<div class="input_container"><label for="arrowScale">Arrow Scale:</label>
+						<input type="number" id="arrowScale" name="arrowScale" onchange="document.getElementById('preset').value = 0" min="10" max="50" step="5" value="20"></div>
+
+						<div class="input_container"><label for="arrowWidth">Arrow Width:</label>
+						<input type="number" id="arrowWidth" name="arrowWidth" onchange="document.getElementById('preset').value = 0" min="1" max="5" step="1" value="2"></div>
+						
+						<div class="input_container"><label for="bpm">Beats per Minute (bpm):</label>
+						<input type="number" id="bpm" name="bpm" onchange="document.getElementById('preset').value = 0" min="60" max="240" step="1" value="120"></div>
+							
+						<div class="input_container"><label for="levelLength">Level/Exitement Length:</label>
+						<input type="number" id="levelLength" name="levelLength" onchange="document.getElementById('preset').value = 0" min="10" max="300" step="5" value="120"></div>
+						
+						<div class="input_container"><label for="startAbsSpeed">Total Speed at Start:</label>
+						<input type="number" id="startAbsSpeed" name="startAbsSpeed" onchange="document.getElementById('preset').value = 0" min="1" max="30" step="1" value="6"></div>
+								
+						<div class="input_container"><label for="devMode">Developer Mode:</label>
+						<input type="checkbox" id="devMode" onclick="pushOnOff(this)" name="devMode" value="false"></div>
+					</fieldset>
+					<input type="submit" id="submit" class="button" value="LOAD GAME">
+				</form>
+			</div>
+		</div>
+	</body>	
+</html>
